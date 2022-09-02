@@ -1,0 +1,24 @@
+<div class="main-container">
+    <div class="list-employee-container">
+        <h1>Listar funcionários</h1>
+        <div id="alert-info" class="alert-info" style="display:none;padding:10px;background-color:lightseagreen;color:white;font-weight:bold; width:100%">
+            <p id="alert-error-message">{{infoMessage}}</p>
+        </div>
+        
+        <div style="margin-top:30px;">
+            <div style="border:2px solid black;padding:2%;margin-top:30px;" *ngFor="let employee of this.employees">
+                <input type="hidden" value="{{employee.id}}">
+                <p><b>Nome:</b> {{employee.name}}</p>
+                <p><b>Habilidades:</b></p>
+                <ul>
+                    <li *ngFor="let skill of employee.skills">
+                        {{skill.name}}
+                    </li>
+                </ul>
+                <div style="display:flex;justify-content: flex-end;">
+                    <button style="background-color:#D9D9D9;padding:10px;width:15%;border:none;" (click)="deleteEmployeeById(employee.id)"><b>Eliminar</b></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

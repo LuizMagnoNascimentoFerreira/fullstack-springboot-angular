@@ -1,0 +1,32 @@
+<div class="main-container">
+    <div class="form-container">
+        <h1>Novo funcionário</h1>
+        <div id="alert-error" class="alert-error" class="alert error invisible">
+            <p id="alert-error-message">{{errorMessage}}</p>
+        </div>
+        <div id="alert-success" class="alert-error" class="alert success invisible">
+            <p id="alert-success-message">Funcionário salvo</p>
+        </div>
+        <div style="margin-top:30px;">
+            <div>
+                <input type="text" [(ngModel)]="employeeName" id="employee-name-input" name="employeeName" class="input-field" style="width:90.6%" placeholder="Nome">
+            </div>
+            <div style="margin-top:5px;">
+                <form>
+                    <input type="text" [(ngModel)]="skill" name="skill" id="skill-input" class="input-field" style="width:60%" placeholder="Habilidade">
+                    <button id="add-skill-button" (click)="addSkill()"  class="button" style="margin-left: 5px; width: 30%">Adicionar habilidade</button>
+                </form>
+               <button type="submit" id="save-employee-button" (click)="saveEmployee()" class="button" style="width: 93.6%">Salvar</button>
+            </div>
+        </div>
+        <div>
+            <h3>Habilidades</h3>
+            <div id="alert-info" class="alert info" style="display:block;">
+             <p id="alert-info-message">Nenhuma habilidade registrada no momento</p>
+            </div>
+            <ul id="skills-list">
+                <li *ngFor="let skill of skills">{{skill}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

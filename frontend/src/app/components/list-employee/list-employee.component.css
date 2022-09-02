@@ -1,0 +1,9 @@
+.main-container{
+    display:flex;
+    justify-content: center;
+    width:100%;
+}
+.list-employee-container{
+    width:800px;
+    margin-top:50px;
+}
